@@ -13,6 +13,7 @@ URL:            http://www.flumotion.net/
 Source:         http://www.flumotion.net/src/flumotion/%{name}-%{version}.tar.bz2
 Source1:	flumotion-make-dummy-cert.bz2
 Patch:	flumotion-0.1.10-init.patch
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 Requires:	python >= 2.3
 Requires:	gstreamer0.10-plugins-good
