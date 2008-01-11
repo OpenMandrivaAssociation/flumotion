@@ -117,17 +117,6 @@ cat > %buildroot%_sysconfdir/sysconfig/%name << EOF
 EOF
 
 # menu
-mkdir -p %{buildroot}/%{_menudir}
-cat > %{buildroot}/%{_menudir}/%{name} <<EOF
-?package(%{name}): \
-command="%{_bindir}/flumotion-admin" \
-title="Flumotion Administration" \
-longtitle="Configure and manage the Flumotion streaming server" \
-section="System/Configuration/Other" \
-needs="x11" \
-icon="%name.png" \
-startup_notify="true" xdg="true"
-EOF
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-System-Configuration-Other" \
@@ -267,7 +256,6 @@ fi
 %attr(750,flumotion,root) %{_var}/log/flumotion
 %attr(750,flumotion,root) %{_var}/cache/flumotion
 %attr(750,flumotion,root) %{_var}/lib/flumotion/
-%{_menudir}/%{name}
 %_liconsdir/%name.png
 %_iconsdir/%name.png
 %_miconsdir/%name.png
