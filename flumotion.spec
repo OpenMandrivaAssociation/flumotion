@@ -29,7 +29,7 @@ Requires(post):	openssl
 BuildRequires:	python-twisted-core python-twisted-names
 BuildRequires:	python-twisted-web
 BuildRequires:	gstreamer0.10-python-devel >= %gstpy
-BuildRequires:	libgstreamer0.10-devel >= 0.8.5
+BuildRequires:	gstreamer0.10-devel >= 0.8.5
 BuildRequires:	python >= 2.3
 BuildRequires:	pygtk2.0-devel >= %pygtk
 BuildRequires:	pygtk2.0-libglade >= %pygtk
