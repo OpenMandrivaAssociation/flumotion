@@ -3,7 +3,7 @@
 %define release %mkrel 1
 
 Name:           flumotion
-Version: 0.4.2
+Version: 0.5.1
 Release: %release
 Summary:        Flumotion - the Fluendo Streaming Server
 
@@ -239,9 +239,12 @@ fi
 %{_bindir}/flumotion-job
 %{_bindir}/flumotion-launch
 %{_bindir}/flumotion-command
+%{_bindir}/flumotion-nagios
+%{_bindir}/flumotion-rrdmon
 %{_sbindir}/flumotion
 %{_libdir}/flumotion
 %{_datadir}/applications/flumotion-admin.desktop
+%{_datadir}/hal/fdi/policy/20thirdparty/91-flumotion-device-policy.fdi
 %{_datadir}/pixmaps/flumotion.png
 #gw yes, we need them all at runtime
 %_datadir/locale/*/LC_MESSAGES/flumotion.mo
