@@ -138,7 +138,9 @@ rm -rf $RPM_BUILD_ROOT
 /usr/sbin/usermod -G audio,video -d %{_var}/lib/flumotion flumotion
 
 %post
+%if %mdkversion < 200900
 %update_menus
+%endif
 %_post_service flumotion
 # generate a default .pem certificate ?
 PEM_FILE="%{_sysconfdir}/flumotion/default.pem"
@@ -208,7 +210,9 @@ fi
 %_preun_service flumotion
 
 %postun
+%if %mdkversion < 200900
 %clean_menus
+%endif
 %_postun_userdel flumotion
 # if removal and not upgrade, clean up user and config
 if [ $1 -eq 0 ]
