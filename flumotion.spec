@@ -1,6 +1,6 @@
 %define gstpy 0.7.94
 %define pygtk 2.4.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:           flumotion
 Version: 0.5.1
