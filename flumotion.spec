@@ -34,7 +34,7 @@ BuildRequires:	python >= 2.3
 BuildRequires:	pygtk2.0-devel >= %pygtk
 BuildRequires:	pygtk2.0-libglade >= %pygtk
 BuildRequires:	epydoc
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 
 %description
