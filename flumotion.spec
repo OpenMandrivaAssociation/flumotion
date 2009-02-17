@@ -1,6 +1,6 @@
 %define gstpy 0.7.94
 %define pygtk 2.4.0
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name:           flumotion
 Version: 0.5.1
@@ -12,7 +12,7 @@ License:	GPL
 URL:            http://www.flumotion.net/
 Source:         http://www.flumotion.net/src/flumotion/%{name}-%{version}.tar.bz2
 Source1:	flumotion-make-dummy-cert.bz2
-Patch:	flumotion-0.1.10-init.patch
+Patch:	flumotion-0.5.1-init.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 Requires:	python >= 2.3
@@ -24,6 +24,7 @@ Requires:	python-twisted-web
 Requires:	pygtk2.0 >= %pygtk
 Requires:	pygtk2.0-libglade >= %pygtk
 Requires:	python-imaging
+Requires:	fonts-ttf-bitstream-vera
 Requires(pre):  rpm-helper
 Requires(post):	openssl
 BuildRequires:	python-twisted-core python-twisted-names
@@ -129,6 +130,9 @@ convert -scale 32 data/%name.png %buildroot%_iconsdir/%name.png
 convert -scale 16 data/%name.png %buildroot%_miconsdir/%name.png
 
 rm -f %buildroot%_libdir/flumotion/python/flumotion/extern/pytrayicon/pytrayicon.la
+
+#replace by symlink
+ln -sf %_datadir/fonts/TTF/Vera.ttf %buildroot%_libdir/flumotion//component/converters/overlay/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
