@@ -1,9 +1,9 @@
 %define gstpy 0.7.94
 %define pygtk 2.4.0
-%define release %mkrel 3
+%define release %mkrel 1
 
 Name:           flumotion
-Version: 0.5.1
+Version: 0.6.0
 Release: %release
 Summary:        Flumotion - the Fluendo Streaming Server
 
@@ -25,6 +25,7 @@ Requires:	pygtk2.0 >= %pygtk
 Requires:	pygtk2.0-libglade >= %pygtk
 Requires:	python-imaging
 Requires:	fonts-ttf-bitstream-vera
+Requires:	python-rrdtool
 Requires(pre):  rpm-helper
 Requires(post):	openssl
 BuildRequires:	python-twisted-core python-twisted-names
@@ -34,6 +35,7 @@ BuildRequires:	gstreamer0.10-devel >= 0.8.5
 BuildRequires:	python >= 2.3
 BuildRequires:	pygtk2.0-devel >= %pygtk
 BuildRequires:	pygtk2.0-libglade >= %pygtk
+BuildRequires:	python-rrdtool
 BuildRequires:	epydoc
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
@@ -126,13 +128,13 @@ desktop-file-install --vendor="" \
 
 mkdir -p %buildroot{%_liconsdir,%_iconsdir,%_miconsdir}
 ln -s %_datadir/pixmaps/%name.png %buildroot%_liconsdir/%name.png
-convert -scale 32 data/%name.png %buildroot%_iconsdir/%name.png
-convert -scale 16 data/%name.png %buildroot%_miconsdir/%name.png
+convert -scale 32 data/image/%name.png %buildroot%_iconsdir/%name.png
+convert -scale 16 data/image/%name.png %buildroot%_miconsdir/%name.png
 
 rm -f %buildroot%_libdir/flumotion/python/flumotion/extern/pytrayicon/pytrayicon.la
 
 #replace by symlink
-ln -sf %_datadir/fonts/TTF/Vera.ttf %buildroot%_libdir/flumotion//component/converters/overlay/
+ln -sf %_datadir/fonts/TTF/Vera.ttf %buildroot%_libdir/flumotion/python/flumotion/component/converters/overlay/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -258,6 +260,7 @@ fi
 %_datadir/locale/*/LC_MESSAGES/flumotion.mo
 %dir %{_datadir}/flumotion
 %{_datadir}/flumotion/*xsl
+%{_datadir}/flumotion/*.html
 %{_datadir}/flumotion/glade/
 %{_datadir}/flumotion/image
 %{_datadir}/flumotion/make-dummy-cert
