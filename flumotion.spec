@@ -38,7 +38,7 @@ BuildRequires:	pygtk2.0-devel >= %pygtk
 BuildRequires:	pygtk2.0-libglade >= %pygtk
 BuildRequires:	python-rrdtool
 BuildRequires:	python-kiwi
-BuildRequires:	epydoc
+BuildRequires:	epydoc x11-server-xvfb
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 
