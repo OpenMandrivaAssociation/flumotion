@@ -26,6 +26,7 @@ Requires:	pygtk2.0-libglade >= %pygtk
 Requires:	python-imaging
 Requires:	fonts-ttf-bitstream-vera
 Requires:	python-rrdtool
+Requires:	python-kiwi
 Requires(pre):  rpm-helper
 Requires(post):	openssl
 BuildRequires:	python-twisted-core python-twisted-names
@@ -36,6 +37,7 @@ BuildRequires:	python >= 2.3
 BuildRequires:	pygtk2.0-devel >= %pygtk
 BuildRequires:	pygtk2.0-libglade >= %pygtk
 BuildRequires:	python-rrdtool
+BuildRequires:	python-kiwi
 BuildRequires:	epydoc
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
