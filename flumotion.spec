@@ -3,7 +3,7 @@
 %define release %mkrel 1
 
 Name:           flumotion
-Version: 0.6.0
+Version: 0.6.1
 Release: %release
 Summary:        Flumotion - the Fluendo Streaming Server
 
