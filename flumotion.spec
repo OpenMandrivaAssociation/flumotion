@@ -3,7 +3,7 @@
 %define release %mkrel 1
 
 Name:           flumotion
-Version: 0.6.1
+Version: 0.8.0
 Release: %release
 Summary:        Flumotion - the Fluendo Streaming Server
 
@@ -12,13 +12,14 @@ License:	GPL
 URL:            http://www.flumotion.net/
 Source:         http://www.flumotion.net/src/flumotion/%{name}-%{version}.tar.bz2
 Source1:	flumotion-make-dummy-cert.bz2
-Patch:	flumotion-0.5.1-init.patch
+Patch:	flumotion-0.8.0-init.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 Requires:	python >= 2.3
 Requires:	gstreamer0.10-plugins-good
 Requires:	gstreamer0.10-python >= %gstpy
 Requires:	python-twisted-core python-twisted-names
+Requires:	python-twisted-conch
 # needed for http-streamer
 Requires:	python-twisted-web
 Requires:	pygtk2.0 >= %pygtk
@@ -31,6 +32,7 @@ Requires(pre):  rpm-helper
 Requires(post):	openssl
 BuildRequires:	python-twisted-core python-twisted-names
 BuildRequires:	python-twisted-web
+BuildRequires:	python-twisted-conch
 BuildRequires:	gstreamer0.10-python-devel >= %gstpy
 BuildRequires:	gstreamer0.10-devel >= 0.8.5
 BuildRequires:	python >= 2.3
