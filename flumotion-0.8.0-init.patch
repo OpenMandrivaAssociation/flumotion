@@ -1,0 +1,33 @@
+diff -p -up flumotion-0.8.0/doc/redhat/flumotion.init flumotion-0.8.0/doc/redhat/flumotion
+--- flumotion-0.8.0/doc/redhat/flumotion.init	2010-09-15 14:19:34.000000000 +0200
++++ flumotion-0.8.0/doc/redhat/flumotion	2010-09-20 10:03:12.000000000 +0200
+@@ -4,11 +4,19 @@
+ #
+ # flumotion: Flumotion Streaming Server
+ #
+-# chkconfig: - 80 20
++# chkconfig: 35 80 20
+ #
+ # description: Flumotion is a streaming server for audio and video. \
+ #              See http://www.flumotion.net for details.
+ #
++### BEGIN INIT INFO
++# Provides: flumotion
++# Required-Start: $network
++# Required-Stop: $network
++# Default-Start: 3 5
++# Description: Flumotion is a streaming server for audio and video.
++#              See http://www.fluendo.com for details.
++### END INIT INFO
+ # Source function library.
+ . /etc/rc.d/init.d/functions
+ 
+@@ -44,6 +52,8 @@ update_lockfile() {
+ 	fi
+ }
+ 
++. /etc/sysconfig/flumotion
++
+ # if arguments are specified, we only start/stop that service part
+ start() {
+ 	if test "x$*" != "x"
