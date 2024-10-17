@@ -9,7 +9,7 @@ Summary:        Flumotion - the Fluendo Streaming Server
 
 Group:          System/Servers
 License:	GPL
-URL:            http://www.flumotion.net/
+URL:            https://www.flumotion.net/
 Source:         http://www.flumotion.net/src/flumotion/%{name}-%{version}.tar.bz2
 Source1:	flumotion-make-dummy-cert.bz2
 Patch:	flumotion-0.8.0-init.patch
