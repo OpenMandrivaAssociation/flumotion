@@ -30,6 +30,11 @@ Requires:	python-rrdtool
 Requires:	python-kiwi
 Requires(pre):  rpm-helper
 Requires(post):	openssl
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	python-twisted-core python-twisted-names
 BuildRequires:	python-twisted-web
 BuildRequires:	python-twisted-conch
